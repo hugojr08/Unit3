@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Math Formula</title>
+  <link rel="stylesheet" href="style.css">
+    <style>
+        .hidden{
+            display: none;
+        }
+    </style>
+</head>   
+<body>
+    <div class="container">
+        <div class="content">
+            <h3>Rectangle Formula</h3>
+            <div class="row">
+                <div>
+                    <label for="a">A</label>
+                    <input type="text" id="a" name="a" style="width: 50px;">
+                </div>
+                <div>
+                    <label for="b">B</label>
+                    <input type="text" id="b" name="b" style="width: 50px;">
+                </div>
+                <button id="calc">Calculate</button>
+                <button id="clear">Clear</button>
+                <p id='ptag'></p>
+            </div>
+        </div>
+    </div>
+<script>
+    const a = document.getElementById('a');
+    const b = document.getElementById('b');
+    const calculateButton = document.getElementById('calc');
+    const ptag = document.getElementById('ptag');
+    const clearButton = document.getElementById('clear');
+
+    function calculateArea() {
+        let length1 = +a.value;
+        let width1 = +b.value;
+
+
+        let area = width1 * length1;
+        ptag.textContent = `The area is ${area}`;
+    }
+    function clearArea() {
+        ptag.textContent = '';
+        a.value= '';
+        b.value= '';
+    }
+
+    calculateButton.addEventListener('click', calculateArea);
+    clearButton.addEventListener('click', clearArea);
+</script>
+
+</body>
+</html>
